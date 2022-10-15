@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 3100;
+const port = 3000;
 const smtpTransport = require('nodemailer-smtp-transport');
 
 app.use(cors({ origin: '*' }));
