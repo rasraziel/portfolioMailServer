@@ -61,8 +61,6 @@ app.post("/contact/message", (req, res) => {
             console.log('Email sent: ' + info.response);
         }
     });
-
-    res.redirect("/");
 });
 
 const server = app.listen(port, (error) => {
