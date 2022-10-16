@@ -31,6 +31,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
 
 app.post("/contact/message", (req, res) => {
 
+    console.log('Data received: ' + req.body);
 
     const htmlTemplate = `
     <div style="display:flex; justify-content: center;">
@@ -59,6 +60,7 @@ app.post("/contact/message", (req, res) => {
         subject: req.body.subject + ' (' + req.body.name + ')',
         html: htmlTemplate
     };
+
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
