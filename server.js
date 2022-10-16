@@ -45,6 +45,12 @@ app.post("/contact/message", (req, res) => {
     <div style="display:flex; justify-content: center;">
         <p style="color:grey;">${JSON.stringify(req.body.data)} </p>
     </div>
+    <div style="display:flex; justify-content: center;">
+        <p style="color:grey;">${req.body.languages} </p>
+    </div>
+    <div style="display:flex; justify-content: center;">
+        <p style="color:grey;">${req.body.userAgent} </p>
+    </div>
     `
 
     const mailOptions = {
