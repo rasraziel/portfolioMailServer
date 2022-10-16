@@ -30,7 +30,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
 
 
 app.post("/contact/message", (req, res) => {
-    
+
     const htmlTemplate = `
     <div style="display:flex; justify-content: center;">
         <h1 style="color:red;">${req.body.date.toString()}</h1>
@@ -53,9 +53,9 @@ app.post("/contact/message", (req, res) => {
     `
 
     const mailOptions = {
-        from: req.body.emailAddress,
+        from: req.body.name + '<' + req.body.emailAddress + '>',
         to: 'rasraziel@gmail.com',
-        subject: req.body.subject + ' (' + req.body.name + ')',
+        subject: req.body.subject,
         html: htmlTemplate
     };
 
