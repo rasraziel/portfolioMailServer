@@ -32,6 +32,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
 app.post("/contact/message", (req, res) => {
 
     console.log('Data received: ' + req.body);
+    res.sendStatus(200);
 
     const htmlTemplate = `
     <div style="display:flex; justify-content: center;">
