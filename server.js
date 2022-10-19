@@ -33,7 +33,7 @@ app.post("/contact/message", (req, res) => {
 
     const htmlTemplate = `
     <div>
-    <p style="color:blue;">Date: ${req.body.req.body.date} </p>
+    <p style="color:blue;">Date: ${req.body.date} </p>
     <p style="color:blue;">From: ${req.body.emailAddress} </p>
     <p style="color:blue;">Message: ${req.body.message} </p>
     <table style="border-collapse: collapse; font-family: Tahoma, Geneva, sans-serif;">
