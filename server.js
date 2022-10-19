@@ -32,24 +32,66 @@ const transporter = nodemailer.createTransport(smtpTransport({
 app.post("/contact/message", (req, res) => {
 
     const htmlTemplate = `
-    <div style="display:flex; justify-content: center;">
-        <h1 style="color:red;">${req.body.date.toString()}</h1>
-    </div>
-    <div style="display:flex; justify-content: center;">
-        <h2 style="color:blue;">My name is ${req.body.name} and my email address is ${req.body.emailAddress} </h2>
-    </div>
-    <div style="display:flex; justify-content: center;">
-        <p style="color:black;">${req.body.message} </p>
-    </div>
-    <div style="display:flex; justify-content: center;">
-        <p style="color:grey;">${JSON.stringify(req.body.data)} </p>
-    </div>
-    <div style="display:flex; justify-content: center;">
-        <p style="color:grey;">${req.body.languages} </p>
-    </div>
-    <div style="display:flex; justify-content: center;">
-        <p style="color:grey;">${req.body.userAgent} </p>
-    </div>
+    <div>
+    <p style="color:blue;">Date: ${req.body.req.body.date} </p>
+    <p style="color:blue;">From: ${req.body.emailAddress} </p>
+    <p style="color:blue;">Message: ${req.body.message} </p>
+    <table style="border-collapse: collapse; font-family: Tahoma, Geneva, sans-serif;">
+	<thead>
+		<tr>
+			<td style="background-color: #54585d;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid #54585d;
+            padding: 15px;">Country Code</td>
+			<td style="background-color: #54585d;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid #54585d;
+            padding: 15px;">Country Name</td>
+			<td style="background-color: #54585d;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid #54585d;
+            padding: 15px;">City</td>
+			<td style="background-color: #54585d;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid #54585d;
+            padding: 15px;">Language</td>
+			<td style="background-color: #54585d;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid #54585d;
+            padding: 15px;">Languages</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="background-color: #f9fafb;">
+			<td style="color: #636363;
+            border: 1px solid #dddfe1;
+            padding: 15px;">${req.body.country_code}</td>
+			<td style="color: #636363;
+            border: 1px solid #dddfe1;
+            padding: 15px;">${req.body.country_name}</td>
+			<td style="color: #636363;
+            border: 1px solid #dddfe1;
+            padding: 15px;">${req.body.city}</td>
+			<td style="color: #636363;
+            border: 1px solid #dddfe1;
+            padding: 15px;">${req.body.language}</td>
+			<td style="color: #636363;
+            border: 1px solid #dddfe1;
+            padding: 15px;">${req.body.languages}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
     `
 
     const mailOptions = {
