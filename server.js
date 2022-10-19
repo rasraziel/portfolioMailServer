@@ -32,10 +32,10 @@ const transporter = nodemailer.createTransport(smtpTransport({
 app.post("/contact/message", (req, res) => {
 
     const htmlTemplate = `
-    <div>
-    <p style="color:blue;">Date: ${req.body.date} </p>
-    <p style="color:blue;">From: ${req.body.emailAddress} </p>
-    <p style="color:blue;">Message: ${req.body.message} </p>
+    <div style="background-color: #E0D7E5;">
+    <p style="color:black;"><span style="color:blue;">Date: </span>${req.body.date} </p>
+    <p style="color:black;"><span style="color:blue;">From: </span>${req.body.emailAddress} </p>
+    <p style="color:black;"><span style="color:blue;">Message: </span>${req.body.message} </p>
     <table style="border-collapse: collapse; font-family: Tahoma, Geneva, sans-serif;">
 	<thead>
 		<tr>
